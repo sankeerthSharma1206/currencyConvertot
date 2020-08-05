@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "705844138258",
+    "firebase_url": "https://nhmrt-jssk-dev.firebaseio.com",
+    "project_id": "nhmrt-jssk-dev",
+    "storage_bucket": "nhmrt-jssk-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705844138258:android:723ebecaf1fc2756e623cb",
+        "android_client_info": {
+          "package_name": "com.jssk.android.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705844138258-n2ah5d74udp052ha3b3a56d1e0ebc047.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7pQLWJiAT7biPARoPtMNnQi0X3GztkpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705844138258-n2ah5d74udp052ha3b3a56d1e0ebc047.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
