@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.ContentResolver
 import android.content.Context
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
@@ -19,6 +18,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.FileProvider
+import com.google.firebase.messaging.FirebaseMessaging
 import com.jssk.android.R
 import java.io.File
 
@@ -138,12 +138,12 @@ object Helper {
             Html.fromHtml(str)
     }
 
-    /*fun subscribeToTopics() {
+    fun subscribeToTopics() {
         val messaging = FirebaseMessaging.getInstance()
         try {
-            if (PrefManager.getUserStringData(Constants.keyRole).equals(Constants.ROLE_ADMIN))
-                messaging.subscribeToTopic(Constants.topicAdmin)
-            messaging.subscribeToTopic(PrefManager.getUserStringData(Constants.keyMobile)!!)
+            /*if (PrefManager.getUserStringData(Constants.keyRole).equals(Constants.ROLE_ADMIN))
+                messaging.subscribeToTopic(Constants.topicAdmin)*/
+            messaging.subscribeToTopic(PrefManager.getUserMobile())
         } catch (ex: Exception) {
             ex.printStackTrace()
         }
@@ -152,13 +152,13 @@ object Helper {
     fun unSubscribeFromTopics() {
         val messaging = FirebaseMessaging.getInstance()
         try {
-            if (PrefManager.getUserStringData(Constants.keyRole).equals(Constants.ROLE_ADMIN))
-                messaging.unsubscribeFromTopic(Constants.topicAdmin)
-            messaging.unsubscribeFromTopic(PrefManager.getUserStringData(Constants.keyMobile)!!)
+            /*if (PrefManager.getUserStringData(Constants.keyRole).equals(Constants.ROLE_ADMIN))
+                messaging.unsubscribeFromTopic(Constants.topicAdmin)*/
+            messaging.unsubscribeFromTopic(PrefManager.getUserMobile())
         } catch (ex: Exception) {
             ex.printStackTrace()
         }
-    }*/
+    }
 
     fun clearCache(context: Context) {
         val path = File(context.externalCacheDir, "camera")

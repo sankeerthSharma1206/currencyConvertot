@@ -34,12 +34,12 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix ".dev"
-            resValue "string", "app_name", "JSSK App Dev"
+            applicationIdSuffix ".debug"
+            resValue "string", "app_name", "JSSK Dev"
             signingConfig signingConfigs.debug
         }
         release {
-            resValue "string", "app_name", "JSSK App"
+            resValue "string", "app_name", "JSSK"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
@@ -59,6 +59,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.github.yalantis:ucrop:2.2.3'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation 'com.google.firebase:firebase-messaging:20.2.4'
     implementation 'com.google.firebase:firebase-functions:19.0.2'

@@ -16,12 +16,10 @@ object Constants {
 
     const val COLLECTION_USERS = "users"
 
-    const val keyName = "userName"
-    const val keyRole = "role"
-    const val keyEmail = "email"
-    const val keyMobile = "mobileNumber"
+    const val keyUserDTO = "user_dto"
 
     const val ROLE_USER = "USER"
+    const val ROLE_DRIVER = "DRIVER"
 
     const val PAGE_SIZE = 20L
 

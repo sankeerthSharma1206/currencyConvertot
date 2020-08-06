@@ -1,7 +1,6 @@
 package com.jssk.android.interfaces
 
-interface ListActionsInterface
-{
+interface ListActionsInterface {
     fun onItemClicked(pos: Int)
     fun onEditClicked(pos: Int)
     fun onRoleClicked(pos: Int)

@@ -1,6 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/app_logo"
+        android:id="@+id/logo"
+        app:layout_constraintBottom_toTopOf="@id/label1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/otp_verification"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/label2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verification_label"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:maxWidth="250dp"
+        android:id="@+id/label2"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintBottom_toTopOf="@id/get_otp_btn"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/number_layout"
+        app:layout_constraintTop_toBottomOf="@id/label2"
+        app:layout_constraintBottom_toTopOf="@id/get_otp_btn">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_mobile_number"
+            android:textSize="14sp"
+            android:id="@+id/label3"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/input_layout"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_hollow_grey_round"
+            app:layout_constraintTop_toBottomOf="@id/label3"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_country_code"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:id="@+id/country_code"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:id="@+id/view"
+                android:background="@color/grey"
+                app:layout_constraintStart_toEndOf="@id/country_code"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toEndOf="@id/view"
+                android:layout_marginStart="10dp"
+                android:id="@+id/mobile_number"
+                android:background="@null"
+                android:maxLength="10"
+                android:textSize="16sp"
+                android:inputType="number"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/verification_layout"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/label2"
+        app:layout_constraintBottom_toTopOf="@id/get_otp_btn">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_code_here"
+            android:textSize="14sp"
+            android:id="@+id/label4"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:id="@+id/otp_et"
+            android:maxLength="6"
+            android:letterSpacing="1"
+            android:background="@drawable/bg_hollow_grey_round"
+            app:layout_constraintTop_toBottomOf="@id/label4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resend_otp"
+            android:id="@+id/resend_otp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/otp_et"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:id="@+id/timer"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="@id/resend_otp"
+            app:layout_constraintStart_toEndOf="@id/resend_otp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_number"
+            android:id="@+id/edit_number"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/resend_otp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_solid_blue_round"
+        android:text="@string/get_otp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="100dp"
+        android:id="@+id/get_otp_btn"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/company_logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/powered_by"
+        android:text="@string/powered_by"
+        android:textColor="@color/grey"
+        app:layout_constraintEnd_toEndOf="@id/company_logo"
+        app:layout_constraintBottom_toTopOf="@id/company_logo"
+        app:layout_constraintStart_toStartOf="@id/company_logo"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:id="@+id/company_logo"
+        android:src="@drawable/company_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

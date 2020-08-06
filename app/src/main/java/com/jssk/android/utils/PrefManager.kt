@@ -2,6 +2,8 @@ package com.jssk.android.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.jssk.android.dtos.UserDTO
 
 object PrefManager {
@@ -90,6 +92,18 @@ object PrefManager {
 
     fun saveUserDTOData(user: UserDTO) {
         val pref = getUserSharedPreferences()?.edit()
+        pref?.putString(Constants.keyUserDTO, Gson().toJson(user))
         pref?.apply()
+    }
+
+    fun getUserDTO(): UserDTO? {
+        return Gson().fromJson(
+            getUserStringData(Constants.keyUserDTO),
+            object : TypeToken<UserDTO>() {}.type
+        )
+    }
+
+    fun getUserMobile(): String {
+        return getUserDTO()?.mobile!!
     }
 }
