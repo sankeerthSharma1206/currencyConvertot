@@ -20,6 +20,7 @@ import android.widget.Toast
 import androidx.core.content.FileProvider
 import com.google.firebase.messaging.FirebaseMessaging
 import com.jssk.android.R
+import com.jssk.android.utils.JSSKApp.Companion.context
 import java.io.File
 
 object Helper {
@@ -160,6 +161,14 @@ object Helper {
         }
     }
 
+    fun getInitials(str: String): String {
+        return when {
+            str.isEmpty() -> context.getString(R.string.n_a)
+            str.length < 2 -> "${str[0]}${str[0]}"
+            else -> str.substring(0, 2)
+        }
+    }
+
     fun clearCache(context: Context) {
         val path = File(context.externalCacheDir, "camera")
         if (path.exists() && path.isDirectory) {
@@ -167,5 +176,9 @@ object Helper {
                 child.delete()
             }
         }
+    }
+
+    fun getProfilePicPath(id: String): String {
+        return "${Constants.FOLDER_PROFILE_PICS}/$id.png"
     }
 }

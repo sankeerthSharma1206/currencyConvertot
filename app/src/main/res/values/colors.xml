@@ -10,6 +10,7 @@
     <color name="blue">#6200EE</color>
     <color name="black">#000000</color>
     <color name="light_grey">#b2b2b2</color>
+    <color name="orange">#FF5722</color>
 
     <color name="ucrop_color_progress_wheel_line" tools:ignore="PrivateResource">
         @color/colorPrimaryDark

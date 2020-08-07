@@ -9,28 +9,30 @@
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/initials"
+        android:textSize="25sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="KV"
+        android:background="@drawable/bg_solid_white_oval"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        app:layout_constraintStart_toStartOf="@id/avatar"
+        app:layout_constraintEnd_toEndOf="@id/avatar"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="24dp"
-        android:src="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/initials"
-        android:textSize="25sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="KV"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/avatar"
-        app:layout_constraintBottom_toBottomOf="@id/avatar"
-        app:layout_constraintStart_toStartOf="@id/avatar"
-        app:layout_constraintEnd_toEndOf="@id/avatar"/>
 
     <TextView
         android:layout_width="wrap_content"

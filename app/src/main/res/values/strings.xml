@@ -59,4 +59,6 @@
     <string name="home">Home</string>
     <string name="my_rides">My Rides</string>
     <string name="profile">Profile</string>
+    <string name="n_a">N/A</string>
+    <string name="check_alternate_number">Check alternate number once</string>
 </resources>

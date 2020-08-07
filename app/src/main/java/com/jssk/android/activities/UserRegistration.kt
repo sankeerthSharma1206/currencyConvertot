@@ -47,6 +47,10 @@ class UserRegistration : AppCompatActivity() {
                 Helper.showErrorDialog(context, getString(R.string.empty_address))
                 return@setOnClickListener
             }
+            if(number2.isNotEmpty() && number2.length != 10) {
+                Helper.showErrorDialog(context, getString(R.string.check_alternate_number))
+                return@setOnClickListener
+            }
             val user = UserDTO(
                 Constants.ROLE_USER, name, mobile!!, number2, email, address
             )
@@ -64,7 +68,7 @@ class UserRegistration : AppCompatActivity() {
         }
     }
 
-    fun showSuccessDialog() {
+    private fun showSuccessDialog() {
         try {
             val dialog = Dialog(context)
             dialog.setContentView(R.layout.dialog_success)
